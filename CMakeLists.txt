@@ -21,3 +21,10 @@ add_library(${PROJECT_NAME} SHARED
 
 target_link_libraries(${PROJECT_NAME} Qt6::Core Qt6::SerialBus Qt6::Network)
 
+if(ANDROID)
+    set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "plugins_canbus_qtcannellonicanbus_arm64-v8a")
+endif()
+
+if(UNIX AND NOT ANDROID)
+    set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "qtCannelloniCanBusPlugin")
+endif()
