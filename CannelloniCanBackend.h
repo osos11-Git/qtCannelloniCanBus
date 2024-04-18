@@ -30,7 +30,6 @@ private:
 
 private slots:
     void dataAvailable();
-    void outQueueTimer();
 };
 
 #endif /* CANNELLONICANBACKEND_H_ */

@@ -12,6 +12,15 @@ class QtCannelloniCanBusPlugin : public QObject, public QCanBusFactory
     Q_INTERFACES(QCanBusFactory)
 
 public:
+
+    QList<QCanBusDeviceInfo> availableDevices(QString *errorMessage) const override
+    {
+        Q_UNUSED(errorMessage);
+        QList<QCanBusDeviceInfo> deviceList;
+        
+        return deviceList; //empty :D
+    }
+    
     QCanBusDevice* createDevice(const QString& interfaceName,
                                 QString* errorMessage) const override
     {
